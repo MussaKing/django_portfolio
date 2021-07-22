@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from chess_players.views import main
+from chess_players.views import main, pageNotFound
 
 
 urlpatterns = [
@@ -23,3 +23,4 @@ urlpatterns = [
     path('', main, name='main'),
     path('players/', include('chess_players.urls'))
 ]
+handler404 = pageNotFound
